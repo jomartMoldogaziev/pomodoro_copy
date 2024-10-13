@@ -21,18 +21,10 @@ const Timer = ({ initialWorkTime = 25, initialRestTime = 5, initialLongRestTime 
     const [showHistoryModal, setShowHistoryModal] = useState(false);
     const [bgPosition, setBgPosition] = useState({ x: 0, y: 0 });
 
+    // Загрузка истории из localStorage при монтировании компонента
     useEffect(() => {
-        const handleMouseMove = (event) => {
-            const x = (event.clientX / window.innerWidth) * 100;
-            const y = (event.clientY / window.innerHeight) * 100;
-            setBgPosition({ x, y });
-        };
-
-        window.addEventListener("mousemove", handleMouseMove);
-
-        return () => {
-            window.removeEventListener("mousemove", handleMouseMove);
-        };
+        const storedHistory = JSON.parse(localStorage.getItem('cycleHistory')) || [];
+        setCycleHistory(storedHistory);
     }, []);
 
     const playSound = () => {
@@ -40,22 +32,33 @@ const Timer = ({ initialWorkTime = 25, initialRestTime = 5, initialLongRestTime 
         audio.play();
     };
 
+    const saveCycleHistory = (cycleData) => {
+        const currentHistory = JSON.parse(localStorage.getItem('cycleHistory')) || [];
+        currentHistory.push(cycleData);
+        localStorage.setItem('cycleHistory', JSON.stringify(currentHistory));
+    };
+
     const handleTimerComplete = useCallback(() => {
         playSound();
-        if (isWorking) {
-            setCycleCount((prev) => prev + 1);
-            setTimeLeft((cycleCount + 1) % 4 === 0 ? longRestTime * 60 : restTime * 60);
-        } else {
-            setTimeLeft(workTime * 60);
-        }
-
+        const newCycleCount = cycleCount + 1;
+        setCycleCount(newCycleCount);
+        setTimeLeft((newCycleCount % 4 === 0 ? longRestTime : restTime) * 60);
         setIsWorking(!isWorking);
-        setCycleHistory((prev) => [
-            ...prev,
-            { cycle: cycleCount + 1, type: isWorking ? 'Работа' : 'Отдых', time: new Date().toLocaleTimeString() },
-        ]);
+        
+        const cycleData = {
+            cycle: newCycleCount,
+            type: isWorking ? 'Работа' : 'Отдых',
+            time: new Date().toLocaleTimeString(),
+        };
+        
+        setCycleHistory((prev) => {
+            const updatedHistory = [...prev, cycleData];
+            saveCycleHistory(cycleData); // Сохранение в localStorage
+            return updatedHistory;
+        });
+
         setIsRunning(false);
-    }, [isWorking, cycleCount, longRestTime, restTime, workTime]);
+    }, [isWorking, cycleCount, longRestTime, restTime]);
 
     useEffect(() => {
         let timer = null;

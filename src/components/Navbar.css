@@ -8,7 +8,7 @@
 }
 
 .navbar button {
-  padding: 10px 20px; /* Увеличены боковые отступы для кнопки */
+  padding: 10px 10px; /* Увеличены боковые отступы для кнопки */
   border: none;
   border-radius: 5px;
   cursor: pointer;
