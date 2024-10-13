@@ -1,6 +1,8 @@
 /* src/App.css */
 body{
   background-color: #460202;
+  margin: 0;
+  padding: 0;
 }
 .App {
   text-align: center;
@@ -96,7 +98,7 @@ button:disabled {
   background-color: rgb(245, 19, 19);
   border: 1px solid #ddd;
   border-radius: 10px;
-
+  margin: 1px;
   width: 100%; /* Установлено на 100% для адаптивности */
   max-width: 500px; /* Максимальная ширина для больших экранов */
   box-shadow: 0px 0px 30px 1px rgb(65, 238, 12);
