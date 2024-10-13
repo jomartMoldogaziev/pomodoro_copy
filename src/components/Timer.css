@@ -1,7 +1,7 @@
 .timer-container {
   background-color: rgb(245, 19, 19);
   border: 1px solid #ddd;
-  border-radius: 10% !important;
+  border-radius: 20px !important;
   padding: 30px;
   width: 100%; /* Занимает 100% ширины */
   max-width: 600px; /* Максимальная ширина для больших экранов */
@@ -97,6 +97,7 @@ button {
   .timer-container {
     padding: 10px; /* Уменьшение отступов для мобильных */
     width: 50%; /* Занимает 90% ширины */
+    
   }
 }
 
