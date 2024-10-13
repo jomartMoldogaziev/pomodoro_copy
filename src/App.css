@@ -97,7 +97,7 @@ button:disabled {
 .timer-container {
   background-color: rgb(245, 19, 19);
   border: 1px solid #ddd;
-  border-radius: 10px;
+  border-radius: 20px;
   margin: 1px;
   width: 100%; /* Установлено на 100% для адаптивности */
   max-width: 500px; /* Максимальная ширина для больших экранов */
@@ -147,5 +147,35 @@ select {
 @media (max-width: 480px) {
   .timer-display {
     font-size: 1em; /* Дополнительное уменьшение шрифта для таймера на маленьких экранах */
+  }
+  body{
+    margin: 25px;
+   
+  }
+  h1 {
+    font-size: 1.5em;
+    padding: 30px;
+    color: #54e45b;
+    margin-top: -20px;
+  }
+  .timer-container {
+    margin-top: -30px;
+    
+  }
+  button {
+    position: relative;
+    padding: 5px 10px;
+    border-radius: 7px;
+    border: 1px solid rgb(109, 248, 44);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background-color: rgb(3, 36, 182);
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    transition: all 0.2s ease-in;
+    cursor: pointer;
   }
 }
