@@ -1,0 +1,43 @@
+.history-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease; /* Плавный переход при появлении */
+}
+
+.history-modal-content {
+  background-color: rgb(250, 249, 249);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Сделано более адаптивным */
+  max-width: 400px; /* Максимальная ширина для больших экранов */
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333; /* Установлен цвет текста для контраста */
+}
+
+/* Адаптивность для экранов меньше 480px */
+@media (max-width: 480px) {
+  .history-modal-content {
+      padding: 15px; /* Уменьшены отступы для мобильных */
+  }
+
+  .close {
+      font-size: 18px; /* Уменьшен размер текста для кнопки закрытия */
+  }
+}

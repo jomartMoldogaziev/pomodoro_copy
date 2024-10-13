@@ -1,0 +1,69 @@
+.music-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f900; /* Добавлен фон для разделения от основного контента */
+  border-radius: 10px; /* Закругленные углы для эстетики */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Тень для выделения */
+}
+
+.upload-btn, .play-btn {
+  background-color: rgba(76, 175, 80, 0.1); /* Установлен прозрачный фон для кнопок */
+  color: #4caf50; /* Цвет текста кнопки */
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s; /* Добавлен переход для трансформации */
+  box-shadow: 0 4px 6px rgba(238, 229, 229, 0.1);
+  margin-bottom: 10px;
+  min-width: 150px;
+}
+
+.upload-btn:hover, .play-btn:hover {
+  background-color: rgba(69, 160, 73, 0.2); /* Изменен цвет фона при наведении */
+  transform: translateY(-2px); /* Легкое поднятие кнопки при наведении */
+}
+
+.audio-name {
+  font-size: 20px;
+  color: #333;
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.play-btn {
+  background-color: rgba(0, 139, 186, 0.1); /* Прозрачный фон для play-кнопки */
+  margin-top: 15px;
+}
+
+.play-btn:hover {
+  background-color: rgba(0, 124, 181, 0.2); /* Изменен цвет фона при наведении */
+}
+
+@media (max-width: 768px) {
+  .upload-btn, .play-btn {
+      padding: 10px 20px;
+      font-size: 14px;
+  }
+
+  .audio-name {
+      font-size: 18px; /* Уменьшен размер текста для планшетов */
+  }
+}
+
+@media (max-width: 480px) {
+  .upload-btn, .play-btn {
+      padding: 8px 16px;
+      font-size: 12px;
+      min-width: 120px; /* Уменьшена минимальная ширина кнопки */
+  }
+
+  .audio-name {
+      font-size: 15px;
+      margin-top: 8px;
+  }
+}

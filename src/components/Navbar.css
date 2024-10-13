@@ -1,0 +1,34 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Центрирование элементов по вертикали */
+  padding: 10px;
+  background-color: #ffffff00; /* Добавлен фон для навигационной панели */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Добавлена тень для улучшения визуального восприятия */
+}
+
+.navbar button {
+  padding: 10px 20px; /* Увеличены боковые отступы для кнопки */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #3f83e7; /* Цвет кнопки */
+  color: #ffffff; /* Цвет текста кнопки */
+  transition: background-color 0.3s ease; /* Плавный переход цвета фона */
+}
+
+.navbar button:hover {
+  background-color: #3700b3; /* Цвет кнопки при наведении */
+}
+
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column; /* Вертикальное расположение на меньших экранах */
+      align-items: stretch; /* Растягивание элементов на всю ширину */
+  }
+
+  .navbar button {
+      width: 100%; /* Кнопки занимают всю ширину на мобильных устройствах */
+      margin: 5px 0; /* Отступы между кнопками */
+  }
+}

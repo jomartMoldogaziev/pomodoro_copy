@@ -1,0 +1,106 @@
+.timer-container {
+  background-color: rgb(245, 19, 19);
+  border: 1px solid #ddd;
+  border-radius: 10% !important;
+  padding: 30px;
+  width: 100%; /* Занимает 100% ширины */
+  max-width: 600px; /* Максимальная ширина для больших экранов */
+  box-shadow: 0px 0px 14px 1px rgb(122, 221, 30);
+  margin: auto; /* Центрирование контейнера */
+  position: relative;
+  transition: background 0.1s ease;
+  margin-top: 20px;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.settings-icon {
+  position: absolute;
+  top: 10px; 
+  right: 10px; 
+  cursor: pointer;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 300px; 
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 15px;
+  background-color: #034141;
+  border-radius: 5px;
+  margin: 10px 0 40px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 5px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timer-display {
+  font-size: 7em;
+  color: #fdfbfb;
+  height: 50px;
+  margin-top: -10px;
+  animation: glow 2s infinite alternate;
+}
+
+@media (max-width: 768px) {
+  .timer-container {
+    padding: 20px; /* Уменьшение отступов для мобильных */
+    width: 90%; /* Занимает 90% ширины */
+  }
+
+  .timer-display {
+    font-size: 5em; /* Меньший размер шрифта на мобильных */
+  }
+}
+
+@media (max-width: 480px) {
+  .timer-display {
+    font-size: 4em; /* Дополнительное уменьшение шрифта для маленьких экранов */
+  }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+  }
+  100% {
+    text-shadow: 0 0 40px rgba(255, 255, 255, 1);
+  }
+}
