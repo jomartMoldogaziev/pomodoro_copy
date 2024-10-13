@@ -94,6 +94,10 @@ button {
   .timer-display {
     font-size: 4em; /* Дополнительное уменьшение шрифта для маленьких экранов */
   }
+  .timer-container {
+    padding: 10px; /* Уменьшение отступов для мобильных */
+    width: 50%; /* Занимает 90% ширины */
+  }
 }
 
 @keyframes glow {

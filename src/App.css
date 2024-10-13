@@ -1,14 +1,12 @@
 /* src/App.css */
-body {
-  margin: 0;
-  padding: 0;
+body{
+  background-color: #460202;
 }
-
 .App {
   text-align: center;
   font-family: 'Arial', sans-serif;
-  background-color: #490101;
-  min-height: 100vh; /* Изменено для адаптивности */
+  
+  min-height: 100vh; /* Изменено для адаптивности */ 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -98,7 +96,7 @@ button:disabled {
   background-color: rgb(245, 19, 19);
   border: 1px solid #ddd;
   border-radius: 10px;
-  padding: 30px;
+
   width: 100%; /* Установлено на 100% для адаптивности */
   max-width: 500px; /* Максимальная ширина для больших экранов */
   box-shadow: 0px 0px 30px 1px rgb(65, 238, 12);
@@ -146,6 +144,6 @@ select {
 
 @media (max-width: 480px) {
   .timer-display {
-    font-size: 4em; /* Дополнительное уменьшение шрифта для таймера на маленьких экранах */
+    font-size: 1em; /* Дополнительное уменьшение шрифта для таймера на маленьких экранах */
   }
 }
