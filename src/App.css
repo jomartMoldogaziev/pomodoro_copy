@@ -179,4 +179,16 @@ select {
     transition: all 0.2s ease-in;
     cursor: pointer;
   }
+  .App {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    
+    min-height: 60vh; /* Изменено для адаптивности */ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Добавлено для центрирования */
+    padding: 0px;
+    color: #333;
+  }
 }
