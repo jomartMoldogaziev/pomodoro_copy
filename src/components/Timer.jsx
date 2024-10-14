@@ -23,7 +23,6 @@ const Timer = ({ initialWorkTime = 25, initialRestTime = 5, initialLongRestTime 
     const [cycleHistory, setCycleHistory] = useState([]);
     const [showSettings, setShowSettings] = useState(false);
     const [showHistoryModal, setShowHistoryModal] = useState(false);
-    const [bgPosition, setBgPosition] = useState({ x: 0, y: 0 });
 
     // Загрузка истории из localStorage при монтировании компонента
     useEffect(() => {
@@ -31,20 +30,12 @@ const Timer = ({ initialWorkTime = 25, initialRestTime = 5, initialLongRestTime 
         setCycleHistory(storedHistory);
     }, []);
 
-    // Обработчик для обновления позиции фона при движении мыши
-    const handleMouseMove = (event) => {
-        const { clientX, clientY } = event;
-        const { innerWidth, innerHeight } = window;
-        const x = Math.round((clientX / innerWidth) * 100);
-        const y = Math.round((clientY / innerHeight) * 100);
-        setBgPosition({ x, y });
-    };
+  
 
     // Добавляем обработчик события при монтировании компонента
     useEffect(() => {
-        window.addEventListener('mousemove', handleMouseMove);
         return () => {
-            window.removeEventListener('mousemove', handleMouseMove);
+        
         };
     }, []);
 

@@ -30,7 +30,7 @@ h1 {
 
 h2 {
   font-size: 2em;
-  color: #e8f806;
+  color: #e94c0e;
 }
 
 /* From Uiverse.io by SteveBloX */
@@ -100,7 +100,6 @@ button:disabled {
 }
 
 .timer-container {
-  background-image: url(C:\Users\User\Desktop\Картинки\th.jpeg);
   border: 1px solid #ddd;
   border-radius: 20px;
   margin: 1px;
