@@ -27,6 +27,23 @@ const Timer = ({ initialWorkTime = 25, initialRestTime = 5, initialLongRestTime 
         setCycleHistory(storedHistory);
     }, []);
 
+    // Обработчик для обновления позиции фона при движении мыши
+    const handleMouseMove = (event) => {
+        const { clientX, clientY } = event;
+        const { innerWidth, innerHeight } = window;
+        const x = Math.round((clientX / innerWidth) * 100);
+        const y = Math.round((clientY / innerHeight) * 100);
+        setBgPosition({ x, y });
+    };
+
+    // Добавляем обработчик события при монтировании компонента
+    useEffect(() => {
+        window.addEventListener('mousemove', handleMouseMove);
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove);
+        };
+    }, []);
+
     const playSound = () => {
         const audio = new Audio(beepSound);
         audio.play();
@@ -42,8 +59,14 @@ const Timer = ({ initialWorkTime = 25, initialRestTime = 5, initialLongRestTime 
         playSound();
         const newCycleCount = cycleCount + 1;
         setCycleCount(newCycleCount);
-        setTimeLeft((newCycleCount % 4 === 0 ? longRestTime : restTime) * 60);
-        setIsWorking(!isWorking);
+        
+        // Устанавливаем время на перерыв или рабочий цикл
+        const nextTimeLeft = newCycleCount % 4 === 0 
+            ? longRestTime * 60 
+            : restTime * 60;
+
+        setTimeLeft(nextTimeLeft);
+        setIsWorking(!isWorking); // Переключаем состояние работы/отдыха
         
         const cycleData = {
             cycle: newCycleCount,
@@ -57,7 +80,8 @@ const Timer = ({ initialWorkTime = 25, initialRestTime = 5, initialLongRestTime 
             return updatedHistory;
         });
 
-        setIsRunning(false);
+        // Автозапуск таймера после завершения текущего цикла
+        setIsRunning(true); 
     }, [isWorking, cycleCount, longRestTime, restTime]);
 
     useEffect(() => {
@@ -158,8 +182,7 @@ const Timer = ({ initialWorkTime = 25, initialRestTime = 5, initialLongRestTime 
                 />
             </div>
 
-            {!isWorking && <MusicPlayer />}
-            {isWorking && <MusicPlayer />}
+            <MusicPlayer />
 
             <button className="timer-button" onClick={startTimer} disabled={isRunning}>
                 Старт

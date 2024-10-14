@@ -9,8 +9,8 @@
 }
 
 .upload-btn, .play-btn {
-  background-color: rgba(76, 175, 80, 0.1); /* Установлен прозрачный фон для кнопок */
-  color: #4caf50; /* Цвет текста кнопки */
+  background-color: rgba(76, 175, 79, 0.24); /* Установлен прозрачный фон для кнопок */
+  color: #ffffff; /* Цвет текста кнопки */
   padding: 12px 24px;
   font-size: 16px;
   border: none;
