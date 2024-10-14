@@ -8,6 +8,10 @@ import beepSound from '../sounds/beep.mp3';
 import './Timer.css';
 import MusicPlayer from './MusicPlayer';
 
+import backgroundImage from '../img/3.png'; // Укажите правильный путь к изображению
+import backgroundImage1 from '../img/4.gif'; // Укажите правильный путь к изображению
+
+
 const Timer = ({ initialWorkTime = 25, initialRestTime = 5, initialLongRestTime = 15 }) => {
     const [workTime, setWorkTime] = useState(initialWorkTime);
     const [restTime, setRestTime] = useState(initialRestTime);
@@ -131,14 +135,17 @@ const Timer = ({ initialWorkTime = 25, initialRestTime = 5, initialLongRestTime 
 
     return (
         <div
-            className="timer-container"
-            style={{
-                background: isWorking
-                    ? `radial-gradient(circle at ${bgPosition.x}% ${bgPosition.y}%, #ff0000, #000000)` 
-                    : `radial-gradient(circle at ${bgPosition.x}% ${bgPosition.y}%, #049504, #000000)`, 
-                transition: 'background 0.1s ease',
-            }}
-        >
+    className="timer-container"
+    style={{
+        backgroundImage: isWorking
+            ? `url(${backgroundImage})` // Используйте изображение во время работы
+            : `url(${backgroundImage1})`, // Используйте изображение во время отдыха
+        backgroundSize: 'cover', // Покрывает весь контейнер
+        backgroundPosition: 'center', // Центрирует изображение
+        transition: 'background 0.1s ease',
+    }}
+>
+
             <Navbar
                 onSettingsClick={() => setShowSettings(true)}
                 onHistoryClick={() => setShowHistoryModal(true)}

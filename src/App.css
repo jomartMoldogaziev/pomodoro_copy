@@ -1,6 +1,6 @@
 /* src/App.css */
 body{
-  background-image: url(./img/3.jpeg);
+  background-image: url(https://i.mycdn.me/getVideoPreview?id=6627033090693&idx=0&type=39&tkn=AcX51_qJnkAsRGmbjJ8J-jNIBMo&fn=vid_x);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -30,7 +30,7 @@ h1 {
 
 h2 {
   font-size: 2em;
-  color: #f0efef;
+  color: #e8f806;
 }
 
 /* From Uiverse.io by SteveBloX */
@@ -100,13 +100,13 @@ button:disabled {
 }
 
 .timer-container {
-  background-color: rgb(245, 19, 19);
+  background-image: url(C:\Users\User\Desktop\Картинки\th.jpeg);
   border: 1px solid #ddd;
   border-radius: 20px;
   margin: 1px;
   width: 100%; /* Установлено на 100% для адаптивности */
   max-width: 500px; /* Максимальная ширина для больших экранов */
-  box-shadow: 0px 0px 30px 1px rgb(65, 238, 12);
+  box-shadow: 0px 0px 30px 1px rgb(158, 4, 30);
   margin-top: -20px;
 }
 

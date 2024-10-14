@@ -36,14 +36,19 @@
 input {
   margin-bottom: 10px;
   padding: 5px;
-  width: 100%; /* Изменено для адаптивности */
+  width: 80%; /* Изменено для адаптивности */
   border: 1px solid #ccc; /* Граница для текстовых полей */
   border-radius: 5px; /* Скругление углов */
 }
 
 .sett {
-  background-color: rgb(250, 74, 74);
+  background-color: rgb(238, 5, 5);
   color: rgb(255, 255, 255);
   padding: 10px; /* Отступ для улучшения визуального восприятия */
   border-radius: 5px; /* Скругление углов */
+}
+.close{
+width: 20px;
+height: 20px;
+border: 2px solid;
 }
