@@ -3,7 +3,7 @@ import './MusicPlayer.css';
 
 const MusicPlayer = () => {
   const [audioSrc, setAudioSrc] = useState(null);
-  const [audioName, setAudioName] = useState(''); // Добавляем состояние для имени файла
+  const [audioName, setAudioName] = useState(''); 
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = React.useRef(null);
 
@@ -12,7 +12,7 @@ const MusicPlayer = () => {
     if (file) {
       const fileURL = URL.createObjectURL(file);
       setAudioSrc(fileURL);
-      setAudioName(file.name); // Сохраняем имя файла
+      setAudioName(file.name);
     }
   };
 
@@ -38,13 +38,13 @@ const MusicPlayer = () => {
         type="file"
         accept="audio/*"
         onChange={handleFileUpload}
-        style={{ display: 'none' }} // Скрываем input
+        style={{ display: 'none' }} 
       />
       <button className="upload-btn" onClick={handleClickUpload}>
         Загрузить свою музыку
       </button>
 
-      {audioName && <p className="audio-name">{audioName}</p>} {/* Отображаем имя файла */}
+      {audioName && <p className="audio-name">{audioName}</p>} 
 
       {audioSrc && (
         <div>

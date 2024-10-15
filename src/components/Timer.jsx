@@ -8,8 +8,8 @@ import beepSound from '../sounds/beep.mp3';
 import './Timer.css';
 import MusicPlayer from './MusicPlayer';
 
-import backgroundImage from '../img/3.png'; // Укажите правильный путь к изображению
-import backgroundImage1 from '../img/4.gif'; // Укажите правильный путь к изображению
+import backgroundImage from '../img/3.png'; 
+import backgroundImage1 from '../img/4.gif'; 
 
 
 const Timer = ({ initialWorkTime = 25, initialRestTime = 5, initialLongRestTime = 15 }) => {
@@ -23,8 +23,8 @@ const Timer = ({ initialWorkTime = 25, initialRestTime = 5, initialLongRestTime 
     const [cycleHistory, setCycleHistory] = useState([]);
     const [showSettings, setShowSettings] = useState(false);
     const [showHistoryModal, setShowHistoryModal] = useState(false);
+    
 
-    // Загрузка истории из localStorage при монтировании компонента
     useEffect(() => {
         const storedHistory = JSON.parse(localStorage.getItem('cycleHistory')) || [];
         setCycleHistory(storedHistory);
@@ -32,7 +32,6 @@ const Timer = ({ initialWorkTime = 25, initialRestTime = 5, initialLongRestTime 
 
   
 
-    // Добавляем обработчик события при монтировании компонента
     useEffect(() => {
         return () => {
         
@@ -55,13 +54,12 @@ const Timer = ({ initialWorkTime = 25, initialRestTime = 5, initialLongRestTime 
         const newCycleCount = cycleCount + 1;
         setCycleCount(newCycleCount);
         
-        // Устанавливаем время на перерыв или рабочий цикл
         const nextTimeLeft = newCycleCount % 4 === 0 
             ? longRestTime * 60 
             : restTime * 60;
 
         setTimeLeft(nextTimeLeft);
-        setIsWorking(!isWorking); // Переключаем состояние работы/отдыха
+        setIsWorking(!isWorking); 
         
         const cycleData = {
             cycle: newCycleCount,
@@ -71,11 +69,10 @@ const Timer = ({ initialWorkTime = 25, initialRestTime = 5, initialLongRestTime 
         
         setCycleHistory((prev) => {
             const updatedHistory = [...prev, cycleData];
-            saveCycleHistory(cycleData); // Сохранение в localStorage
+            saveCycleHistory(cycleData); 
             return updatedHistory;
         });
 
-        // Автозапуск таймера после завершения текущего цикла
         setIsRunning(true); 
     }, [isWorking, cycleCount, longRestTime, restTime]);
 
@@ -129,10 +126,10 @@ const Timer = ({ initialWorkTime = 25, initialRestTime = 5, initialLongRestTime 
     className="timer-container"
     style={{
         backgroundImage: isWorking
-            ? `url(${backgroundImage})` // Используйте изображение во время работы
-            : `url(${backgroundImage1})`, // Используйте изображение во время отдыха
-        backgroundSize: 'cover', // Покрывает весь контейнер
-        backgroundPosition: 'center', // Центрирует изображение
+            ? `url(${backgroundImage})` 
+            : `url(${backgroundImage1})`,
+        backgroundSize: 'cover', 
+        backgroundPosition: 'center', 
         transition: 'background 0.1s ease',
     }}
 >
@@ -167,12 +164,12 @@ const Timer = ({ initialWorkTime = 25, initialRestTime = 5, initialLongRestTime 
 
             <h2>{isWorking ? 'Рабочее время' : 'Время отдыха'}</h2>
 
-            <div style={{ width: '250px', height: '250px', margin: 'auto' }}>
+            <div style={{ width: '250px', height: '250px', margin: 'auto'  }}>
                 <CircularProgressbar
                     value={percentage}
                     text={formatTime(timeLeft)}
                     styles={buildStyles({
-                        textColor: '#fff',
+                        textColor: isWorking ? '#ff0000' : '#00ff00',
                         pathColor: isWorking ? '#ff0000' : '#00ff00',
                         trailColor: '#d6d6d6',
                         textSize: '30px', 

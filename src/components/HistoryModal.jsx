@@ -1,10 +1,8 @@
-// src/components/HistoryModal.js
 import React from "react";
 import './HistoryModal.css';
 
 const HistoryModal = ({ show, onClose, cycleHistory }) => {
-  if (!show) return null; // Если модалка не должна показываться, возвращаем null
-
+  if (!show) return null; 
   return (
     <div className="history-modal">
       <div className="history-modal-content">

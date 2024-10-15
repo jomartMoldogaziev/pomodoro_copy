@@ -3,28 +3,28 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: #f9f9f900; /* Добавлен фон для разделения от основного контента */
-  border-radius: 10px; /* Закругленные углы для эстетики */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Тень для выделения */
+  background-color: #f9f9f900;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .upload-btn, .play-btn {
-  background-color: rgba(76, 175, 79, 0.24); /* Установлен прозрачный фон для кнопок */
-  color: #ffffff; /* Цвет текста кнопки */
+  background-color: rgba(76, 175, 79, 0.24);
+  color: #ffffff;
   padding: 12px 24px;
   font-size: 16px;
   border: none;
   border-radius: 25px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s; /* Добавлен переход для трансформации */
+  transition: background-color 0.3s ease, transform 0.2s; 
   box-shadow: 0 4px 6px rgba(238, 229, 229, 0.1);
   margin-bottom: 10px;
   min-width: 150px;
 }
 
 .upload-btn:hover, .play-btn:hover {
-  background-color: rgba(69, 160, 73, 0.2); /* Изменен цвет фона при наведении */
-  transform: translateY(-2px); /* Легкое поднятие кнопки при наведении */
+  background-color: rgba(69, 160, 73, 0.2); 
+  transform: translateY(-2px); 
 }
 
 .audio-name {
@@ -36,12 +36,12 @@
 }
 
 .play-btn {
-  background-color: rgba(0, 139, 186, 0.1); /* Прозрачный фон для play-кнопки */
+  background-color: rgba(0, 139, 186, 0.1);
   margin-top: 15px;
 }
 
 .play-btn:hover {
-  background-color: rgba(0, 124, 181, 0.2); /* Изменен цвет фона при наведении */
+  background-color: rgba(0, 124, 181, 0.2); 
 }
 
 @media (max-width: 768px) {
@@ -51,7 +51,7 @@
   }
 
   .audio-name {
-      font-size: 18px; /* Уменьшен размер текста для планшетов */
+      font-size: 18px; 
   }
 }
 
@@ -59,7 +59,7 @@
   .upload-btn, .play-btn {
       padding: 8px 16px;
       font-size: 12px;
-      min-width: 120px; /* Уменьшена минимальная ширина кнопки */
+      min-width: 120px;
   }
 
   .audio-name {

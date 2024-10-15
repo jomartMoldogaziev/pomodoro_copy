@@ -1,6 +1,5 @@
-/* src/components/Settings.css */
 .settings-modal {
-  position: fixed; /* Позиция фиксирована, чтобы модальное окно оставалось на месте при прокрутке */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -13,12 +12,12 @@
 }
 
 .settings-content {
-  background-color: #53f12c; /* Используйте нужный цвет */
+  background-color: #53f12c;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 90%; /* Изменено для адаптивности */
-  max-width: 300px; /* Максимальная ширина для больших экранов */
+  width: 90%;
+  max-width: 300px;
   position: relative;
 }
 
@@ -29,23 +28,23 @@
   padding: 10px;
   cursor: pointer;
   border-radius: 5px;
-  font-size: 16px; /* Размер шрифта для лучшей читаемости */
-  margin-top: 10px; /* Отступ сверху для отделения от других элементов */
+  font-size: 16px;
+  margin-top: 10px;
 }
 
 input {
   margin-bottom: 10px;
   padding: 5px;
-  width: 80%; /* Изменено для адаптивности */
-  border: 1px solid #ccc; /* Граница для текстовых полей */
-  border-radius: 5px; /* Скругление углов */
+  width: 80%; 
+  border: 1px solid #ccc; 
+  border-radius: 5px;
 }
 
 .sett {
   background-color: rgb(238, 5, 5);
   color: rgb(255, 255, 255);
-  padding: 10px; /* Отступ для улучшения визуального восприятия */
-  border-radius: 5px; /* Скругление углов */
+  padding: 10px; 
+  border-radius: 5px; 
 }
 .close{
 width: 20px;

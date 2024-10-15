@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  transition: opacity 0.3s ease; /* Плавный переход при появлении */
+  transition: opacity 0.3s ease;
 }
 
 .history-modal-content {
@@ -17,8 +17,8 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: 90%; /* Сделано более адаптивным */
-  max-width: 400px; /* Максимальная ширина для больших экранов */
+  width: 90%; 
+  max-width: 400px; 
   position: relative;
 }
 
@@ -28,16 +28,15 @@
   right: 10px;
   font-size: 20px;
   cursor: pointer;
-  color: #333; /* Установлен цвет текста для контраста */
+  color: #333;
 }
 
-/* Адаптивность для экранов меньше 480px */
 @media (max-width: 480px) {
   .history-modal-content {
-      padding: 15px; /* Уменьшены отступы для мобильных */
+      padding: 15px;
   }
 
   .close {
-      font-size: 18px; /* Уменьшен размер текста для кнопки закрытия */
+      font-size: 18px;
   }
 }
